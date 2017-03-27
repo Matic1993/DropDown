@@ -445,6 +445,7 @@ private extension DropDown {
 		tableView.rowHeight = cellHeight
 		tableView.backgroundColor = tableViewBackgroundColor
 		tableView.separatorColor = separatorColor
+	        tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
 		tableView.layer.cornerRadius = cornerRadius
 		tableView.layer.masksToBounds = true
 
@@ -816,11 +817,13 @@ extension DropDown {
 
 	fileprivate func setHiddentState() {
 		alpha = 0
+		dismissableView.backgroundColor = UIColor(white: 0.0, alpha: 0.0)
 	}
 
 	fileprivate func setShowedState() {
 		alpha = 1
 		tableViewContainer.transform = CGAffineTransform.identity
+		dismissableView.backgroundColor = UIColor(white: 0.0, alpha: 0.25)
 	}
 
 }
